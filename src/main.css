@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+    --ff-default: 'Inter', sans-serif;
+    --ff-fancy: 'Josefin Sans', sans-serif;
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --clr-neutral-100: rgb(10, 10, 10);
+    --clr-neutral-900: rgb(255, 255, 255);
+}
+
+body {
+    background: var(--clr-neutral-100);
+    color: var(--clr-neutral-900);
+    font-family: var(--ff-default);
+    font-weight: var(--fw-regular);
+}
+
+.bold {
+    font-weight: var(--fw-bold);
+}

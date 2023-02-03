@@ -1,0 +1,24 @@
+{
+    "fishes": [
+        { "name": "Mawfish",         "cycle": "Day",         "location": "Lake" },
+        { "name": "Charc Eel",       "cycle": "Day & Night", "location": "Lake" },
+        { "name": "Khut-Khut",       "cycle": "Day",         "location": "Pond" },
+        { "name": "Yogwun",          "cycle": "Day",         "location": "Pond" },
+        { "name": "Mortus Lungfish", "cycle": "Day & Night", "location": "Pond" },
+        { "name": "Goopolla",        "cycle": "Day & Night", "location": "Ocean" },
+        { "name": "Tralok",          "cycle": "Day",         "location": "Ocean" },
+        
+        { "name": "Sharrac", "cycle": "Day & Night", "location": "Ocean", "bait": "Twilight Bait" },
+        { "name": "Karkina", "cycle": "Day & Night", "location": "Ocean", "bait": "Twilight Bait" },
+        { "name": "Murkray", "cycle": "Day & Night", "location": "Ocean", "bait": "Murkray Bait" },
+        { "name": "Norg",    "cycle": "Night",       "location": "Lake",  "bait": "Norg Bait" },
+        { "name": "Cuthol",  "cycle": "Night",       "location": "Pond",  "bait": "Cuthol Bait" },
+        { "name": "Glappid", "cycle": "Night",       "location": "Ocean", "bait": "Glappid Bait" }
+    ],
+    "animals": [
+        { "specie": "Kuaka",       "subspecies": ["Plains", "Ashen", "Ghost"] },
+        { "specie": "Condroc",     "subspecies": ["Common", "Rogue", "Emperor"] },
+        { "specie": "Mergoo",      "subspecies": ["Coastal", "Woodland", "Splendid"] },
+        { "specie": "Vasca Kavat", "subspecies": ["Ostia", "Bau", "Nephil"] }
+    ]
+}
