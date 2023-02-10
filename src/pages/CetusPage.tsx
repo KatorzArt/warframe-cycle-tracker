@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import OpenWorldHeader from "../components/OpenWorldHeader";
-import useApi from "../effects/useApi";
+import useApi from "../hooks/useApi";
 
 const API_ROUTE = "https://api.warframestat.us/pc/cetusCycle";
 
