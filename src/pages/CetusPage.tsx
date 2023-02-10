@@ -9,7 +9,7 @@ function CetusPage() {
   const [countdownTime, setCountdownTime] = useState(0);
 
   useEffect(() => {
-    setCountdownTime(expireTime - Date.now());
+    setCountdownTime(expireTime);
     const intervalId = setInterval(() => setCountdownTime(v => v - 1000), 1000);
     return () => clearTimeout(intervalId);
   }, [expireTime]);

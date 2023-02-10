@@ -9,9 +9,10 @@ function useApi(apiPath: string, cycleKey: string, cycles: [string, string]) {
     fetch(apiPath)
       .then((res) => res.json())
       .then((data) => {
+        const newExpireTime = Date.parse(data.expiry) - Date.now();
         setCycle(data[cycleKey] ? cycles[0] : cycles[1]);
-        setExpireTime(Date.parse(data.expiry));
-        reloadId = setTimeout(fetchData, expireTime);
+        setExpireTime(newExpireTime);
+        reloadId = setTimeout(fetchData, newExpireTime);
       });
   }
   useEffect(() => {
