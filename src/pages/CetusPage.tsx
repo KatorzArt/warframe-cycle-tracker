@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import OpenWorldHeader from "../components/OpenWorldHeader";
 
 const API_ROUTE = "https://api.warframestat.us/pc/cetusCycle";
 
@@ -33,17 +34,7 @@ function CetusPage() {
 
   return (
     <>
-      <header>
-        <h1>Cetus</h1>
-        <div>
-          <p>Cycle</p>
-          <p>{cycle}</p>
-        </div>
-        <div>
-          <p>Ends in</p>
-          <p>{formatDuration(timer)}</p>
-        </div>
-      </header>
+      <OpenWorldHeader zone="Cetus" cycle={cycle} time={timer} />
     </>
   );
 }
