@@ -1,22 +1,41 @@
 import { useEffect, useState } from "react";
 import OpenWorldHeader from "../components/OpenWorldHeader";
-import useApi from "../hooks/useApi";
-
-const API_ROUTE = "https://api.warframestat.us/pc/cetusCycle";
+import useCycleApi from "../hooks/useCycleApi";
 
 function CetusPage() {
-  const { cycle, expireTime } = useApi(API_ROUTE, "isDay", ["Day", "Night"]);
-  const [countdownTime, setCountdownTime] = useState(0);
+  const [cycle, nextCycleTime, loadCycleData] = useCycleApi(
+    "/cetusCycle",
+    "isDay",
+    ["Day", "Night"]
+  );
+
+  const [nextCycleTimeCountDown, setNextCycleTimeCountDown] = useState(0);
 
   useEffect(() => {
-    setCountdownTime(expireTime);
-    const intervalId = setInterval(() => setCountdownTime(v => v - 1000), 1000);
-    return () => clearTimeout(intervalId);
-  }, [expireTime]);
+    loadCycleData();
+  }, []);
+
+  useEffect(() => {
+    setNextCycleTimeCountDown(nextCycleTime);
+    const countdownId = setInterval(
+      () => setNextCycleTimeCountDown((v) => v - 1000),
+      1000
+    );
+    const reloadId = setTimeout(loadCycleData, nextCycleTime);
+
+    return () => {
+      clearInterval(countdownId);
+      clearTimeout(reloadId);
+    };
+  }, [nextCycleTime]);
 
   return (
     <>
-      <OpenWorldHeader zone="Cetus" cycle={cycle} time={countdownTime} />
+      <OpenWorldHeader
+        zone="Cetus"
+        cycle={cycle}
+        time={nextCycleTimeCountDown}
+      />
     </>
   );
 }
